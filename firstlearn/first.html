@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+    <script type="text/javascript" src="../common/vue.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+
+        }
+
+        div.maincontent{
+            width: 690px;
+            margin: 5px auto;
+        }
+
+        ul{
+            padding-left: 20px;
+        }
+
+        div:nth-child(even) {
+            background-color: #dddddd;
+            border-width: 1px 0;
+            border-style: solid;
+            border-color: #dddfff;
+            padding: 15px 5px;
+        }
+
+        div:nth-child(odd) {
+            padding: 15px 5px;
+        }
+
+        div.content {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        i {
+            font-size: 20px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+<div class="maincontent">
+
+    <div id="app">
+        {{ message }}
+    </div>
+
+    <div id="app2">
+        <i>v-bind/v-model:</i>
+        <i class="list">v-bind:</i>
+        <div class="content">
+        <span v-bind:title="message">
+            鼠标悬停几秒钟查看此处动态绑定的提示信息！
+        </span>
+            <input type="text" v-bind:value="message">
+        </div>
+        <div class="content">
+            <i class="list">v-model:</i>
+            <input type="text" v-model="message"/>
+        </div>
+    </div>
+
+    <div id="app3">
+        <i>v-if/v-else/v-else-if:</i>
+        <p v-if="seen" style="color:#0227ff;font-weight: 700;">显示的字体样式</p>
+        <p v-if="!seen" style="color:red;">显示的字体样式</p>
+        <button v-on:click="changeShowWord">更改样式</button>
+    </div>
+
+    <div id="app4">
+        <i>v-for</i>
+        <ul>
+            <li v-for="todo in todos">
+                {{todo.text}}
+            </li>
+        </ul>
+    </div>
+
+    <div id="app5">
+        <p>{{message}}</p>
+        <button v-on:click="reversMessage">逆转信息</button>
+        <cmpt-desp></cmpt-desp>
+    </div>
+
+    <div id="app7">
+        <cmpt-send v-bind:items="groceryList"></cmpt-send>
+        <button v-on:click="groceryList[0].text = 'baz'">Change it</button>
+    </div>
+
+    <div id="app8">
+
+    </div>
+</div>
+
+</body>
+<script type="text/javascript" src="first.js"></script>
+</html>

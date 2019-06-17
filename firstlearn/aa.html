@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        #box{
+            height: 100px;
+            width: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<button class="btn1">dianwo</button>
+<script>
+
+
+
+    $(".btn1").click(function(){
+        $("#box").animate({height:"300px"}).resize(function() {
+            console.log($(this).height());
+        });
+    });
+</script>
+</body>
+</html>
