@@ -16,6 +16,12 @@ ul{
     padding-left: 20px;
 }
 
+li{
+    list-style: none;
+    /*float: left;*/
+    margin-right: 15px;
+}
+
 div:nth-child(even) {
     background-color: #dddddd;
     border-width: 1px 0;

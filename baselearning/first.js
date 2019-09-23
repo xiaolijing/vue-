@@ -54,6 +54,9 @@
         methods:{
             reversMessage:function(){
                 this.message = this.message.split(' ').reverse().join(' ')
+            },
+            handleFocus:function(){
+
             }
         }
     });
@@ -75,6 +78,7 @@
             }
         }
     });
+
     var app7 = new Vue({
         el:"#app7",
         data:{
@@ -83,13 +87,19 @@
                 { id: 1, text: '奶酪' },
                 { id: 2, text: '随便其它什么人吃的东西' }
             ]
+        },
+        methods:{
+            handleInput:function (data) {
+                debugger;
+                data
+            }
         }
     });
 
     var app8 = new Vue({
         el: '#app8',
         template: '<div>' +
-        '<div>属性的绑定使用:,方法的绑定使用@</div>' +
+        '<div>属性的绑定使用: , 方法的绑定使用@</div>' +
         '{{obj.vv}}<br>' +
         '{{value}}<comp-one :value1="value" @input="value = arguments[0];obj.aa=arguments[0]"></comp-one></div>',
         data : {

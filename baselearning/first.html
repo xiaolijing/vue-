@@ -39,7 +39,7 @@
     </div>
 
     <div id="app4">
-        <i>v-for</i>
+        <i>v-for:{{todos}}</i>
         <ul>
             <li v-for="todo in todos">
                 {{todo.text}}
@@ -48,13 +48,20 @@
     </div>
 
     <div id="app5">
+        <p>事件</p>
         <p>{{message}}</p>
-        <button v-on:click="reversMessage">逆转信息</button>
+        <button v-on:click="reversMessage">逆转信息 click事件</button><br>
+        <!--<input v-on:focus="handleFocus" value="获取光标时候的事件">-->
+        <label>cmpt-desp:</label>
         <cmpt-desp></cmpt-desp>
     </div>
 
     <div id="app7">
+        <p>component 在vue中定义的，在所有的vue对象中都可以使用 cmpt-desp</p>
+        <cmpt-desp></cmpt-desp>
+
         <cmpt-send v-bind:items="groceryList"></cmpt-send>
+        <comp-one v-on:input="handleInput"></comp-one>
         <button v-on:click="groceryList[0].text = 'baz'">Change it</button>
     </div>
 
